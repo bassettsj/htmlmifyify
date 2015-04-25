@@ -4,6 +4,7 @@
   "description": "HTML minfiy transform for browserify.",
   "main": "index.js",
   "scripts": {
+    "prepublish": "babel src --out-dir lib",
     "test": "tap-prettify ./test"
   },
   "repository": {
@@ -22,6 +23,7 @@
     "through": "^2.3.7"
   },
   "devDependencies": {
+    "babel": "^5.1.13",
     "browserify": "^9.0.8",
     "tap-prettify": "0.0.2",
     "tape": "^4.0.0"
