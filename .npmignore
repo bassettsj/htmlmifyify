@@ -1,0 +1,6 @@
+!lib/index.js
+src
+test
+.travis.yml
+.jscs.json
+.editorconfig
