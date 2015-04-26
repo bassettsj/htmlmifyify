@@ -7,15 +7,13 @@ import { _extend as extend } from 'util';
 
 
 const DEFAULT_OPTIONS = {
-  minify: {
-    removeStyleLinkTypeAttributes: true,
-    removeScriptTypeAttributes: true,
-    removeEmptyAttributes: true,
-    useShortDoctype: true,
-    removeRedundantAttributes: true,
-    collapseWhitespace: true,
-    removeComments: true,
-  },
+  removeStyleLinkTypeAttributes: true,
+  removeScriptTypeAttributes: true,
+  removeEmptyAttributes: true,
+  useShortDoctype: true,
+  removeRedundantAttributes: true,
+  collapseWhitespace: true,
+  removeComments: true,
 };
 
 export default function htmlminifyify(file, options = {}) {
