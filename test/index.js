@@ -4,23 +4,24 @@ var htmlminifyify = require('../');
 var vm = require('vm');
 
 
-test('should transform html', function (t) {
-    // t.plan(1);
-    var b = browserify();
-    b.add(__dirname + '/runner/html.js');
-    b.transform(htmlminifyify);
+test('should transform html', function(t) {
+  var b = browserify();
+  b.add(__dirname + '/runner/html.js');
+  b.transform(htmlminifyify);
 
-    b.bundle(function (err, src) {
-        if (err) t.end(err);
-        console.log(src.toString());
-        vm.runInNewContext(src, { console: { log: log } });
+  b.bundle(function(err, src) {
+    if (err) { t.end(err); }
 
+    vm.runInNewContext(src, {
+      console: {
+        log: log,
+      },
     });
+  });
 
-    function log (msg) {
-
-        t.equal(msg, '<div><h1>Hello World</h1></div>');
-        t.pass('Works');
-        t.end();
-    }
+  function log(html) {
+    t.comment(html);
+    t.equal(html, '<div><h1>Hello World</h1></div>');
+    t.end();
+  }
 });
